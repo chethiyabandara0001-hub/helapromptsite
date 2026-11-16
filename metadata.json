@@ -1,0 +1,6 @@
+{
+  "name": "helaprompt.",
+  "description": "Sri Lanka's bilingual Sinhala and English AI prompt workspace for business, education, content creation, image generation, and daily productivity.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
