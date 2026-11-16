@@ -202,7 +202,7 @@ export function HelapromptWorkspace() {
   })();
 
   return (
-    <div className="min-h-screen flex bg-[#FAF9F6] text-[#1A241E]">
+    <div className="min-h-screen flex bg-[#F8FAFC] text-[#0F172A]">
       {/* Left Sidebar */}
       <Sidebar
         lang={lang}
@@ -227,7 +227,7 @@ export function HelapromptWorkspace() {
       {/* Main Content Area */}
       <div className="flex-1 min-w-0 flex flex-col">
         {/* Top Bar */}
-        <header className="sticky top-0 z-30 bg-[#FAF9F6]/90 backdrop-blur-sm border-b border-[#ECEAE2]/70">
+        <header className="sticky top-0 z-30 bg-[#F8FAFC]/90 backdrop-blur-sm border-b border-[#E2E8F0]/70">
           <div className="max-w-[1160px] mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
             {/* Left: Mobile menu + Breadcrumb */}
             <div className="flex items-center gap-3 min-w-0">
@@ -235,7 +235,7 @@ export function HelapromptWorkspace() {
                 type="button"
                 onClick={() => setMobileNavOpen(true)}
                 aria-label="Open menu"
-                className="lg:hidden p-2 -ml-2 rounded-lg text-[#4B544C] hover:bg-[#EFECE4]"
+                className="lg:hidden p-2 -ml-2 rounded-lg text-[#4B544C] hover:bg-[#F1F5F9]"
               >
                 <Menu className="w-5 h-5" />
               </button>
@@ -250,12 +250,12 @@ export function HelapromptWorkspace() {
                     setActiveView('explore');
                     setActiveCategory('all');
                   }}
-                  className="hover:text-[#1A241E] transition-colors whitespace-nowrap"
+                  className="hover:text-[#0F172A] transition-colors whitespace-nowrap"
                 >
                   {t.breadcrumbRoot}
                 </button>
                 <ChevronRight className="w-3.5 h-3.5 text-[#A5A9A0] shrink-0" />
-                <span className="text-[#4F564F] font-medium truncate">
+                <span className="text-[#475569] font-medium truncate">
                   {currentBreadcrumbLabel}
                 </span>
               </nav>
@@ -266,15 +266,15 @@ export function HelapromptWorkspace() {
               <div
                 role="group"
                 aria-label="Language switcher"
-                className="inline-flex items-center rounded-lg border border-[#E2E0D7] bg-white p-0.5 text-[12px]"
+                className="inline-flex items-center rounded-lg border border-[#E2E8F0] bg-white p-0.5 text-[12px]"
               >
                 <button
                   type="button"
                   onClick={() => setLang('si')}
                   className={`px-2.5 py-1.5 rounded-[6px] font-medium transition-colors whitespace-nowrap ${
                     lang === 'si'
-                      ? 'bg-[#EFECE4] text-[#1A241E] font-semibold'
-                      : 'text-[#757C73] hover:text-[#1A241E]'
+                      ? 'bg-[#F1F5F9] text-[#0F172A] font-semibold'
+                      : 'text-[#64748B] hover:text-[#0F172A]'
                   }`}
                 >
                   සිං
@@ -284,8 +284,8 @@ export function HelapromptWorkspace() {
                   onClick={() => setLang('en')}
                   className={`px-2.5 py-1.5 rounded-[6px] font-medium transition-colors whitespace-nowrap ${
                     lang === 'en'
-                      ? 'bg-[#EFECE4] text-[#1A241E] font-semibold'
-                      : 'text-[#757C73] hover:text-[#1A241E]'
+                      ? 'bg-[#F1F5F9] text-[#0F172A] font-semibold'
+                      : 'text-[#64748B] hover:text-[#0F172A]'
                   }`}
                 >
                   EN
@@ -295,7 +295,7 @@ export function HelapromptWorkspace() {
               <button
                 type="button"
                 onClick={() => setAddModalOpen(true)}
-                className="rounded-lg bg-[#1D442B] hover:bg-[#275738] active:scale-[0.99] text-white px-3.5 sm:px-4 py-2 text-[12.5px] sm:text-[13px] font-semibold transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D442B] focus-visible:ring-offset-2"
+                className="rounded-lg bg-[#15803D] hover:bg-[#166534] active:scale-[0.99] text-white px-3.5 sm:px-4 py-2 text-[12.5px] sm:text-[13px] font-semibold transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15803D] focus-visible:ring-offset-2"
               >
                 {t.addPromptBtn}
               </button>
@@ -309,13 +309,13 @@ export function HelapromptWorkspace() {
             /* Collections View */
             <section className="space-y-6">
               <div>
-                <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#7C8076] mb-1.5">
+                <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#64748B] mb-1.5">
                   {t.libraryKicker}
                 </p>
-                <h1 className="text-[26px] font-bold text-[#1A241E] tracking-[-0.02em]">
+                <h1 className="text-[26px] font-bold text-[#0F172A] tracking-[-0.02em]">
                   {t.collectionsHeading}
                 </h1>
-                <p className="text-[14px] text-[#5B645C] mt-1">
+                <p className="text-[14px] text-[#475569] mt-1">
                   {t.collectionsSub}
                 </p>
               </div>
@@ -327,15 +327,15 @@ export function HelapromptWorkspace() {
                   );
                   const bgClass =
                     col.accent === 'forest'
-                      ? 'bg-[#1D442B] text-white'
+                      ? 'bg-[#15803D] text-white'
                       : col.accent === 'sage'
-                      ? 'bg-[#E3EAD3] text-[#1A241E]'
-                      : 'bg-[#EFECE4] text-[#1A241E]';
+                      ? 'bg-[#DBEAFE] text-[#0F172A]'
+                      : 'bg-[#FEF3C7] text-[#422006]';
 
                   return (
                     <div
                       key={col.id}
-                      className="rounded-2xl bg-white border border-[#E6E4DC] overflow-hidden flex flex-col"
+                      className="rounded-2xl bg-white border border-[#E2E8F0] overflow-hidden flex flex-col"
                     >
                       <div className={`p-6 ${bgClass}`}>
                         <div className="flex items-center justify-between mb-3">
@@ -349,23 +349,23 @@ export function HelapromptWorkspace() {
                         </h2>
                       </div>
                       <div className="p-5 flex-1 flex flex-col justify-between gap-4">
-                        <p className="text-[13.5px] text-[#5B645C] leading-relaxed">
+                        <p className="text-[13.5px] text-[#475569] leading-relaxed">
                           {lang === 'si'
                             ? col.descriptionSi
                             : col.descriptionEn}
                         </p>
-                        <div className="space-y-2 border-t border-[#F0EFE9] pt-3.5">
+                        <div className="space-y-2 border-t border-[#F1F5F9] pt-3.5">
                           {colPrompts.map((cp) => (
                             <button
                               key={cp.id}
                               type="button"
                               onClick={() => setActivePrompt(cp)}
-                              className="w-full text-left flex items-center justify-between gap-2 py-1.5 px-2 -mx-2 rounded-lg hover:bg-[#F5F4EE] text-[13px] font-medium text-[#1A241E] transition-colors"
+                              className="w-full text-left flex items-center justify-between gap-2 py-1.5 px-2 -mx-2 rounded-lg hover:bg-[#F8FAFC] text-[13px] font-medium text-[#0F172A] transition-colors"
                             >
                               <span className="truncate">
                                 {lang === 'si' ? cp.titleSi : cp.titleEn}
                               </span>
-                              <ArrowUpRight className="w-3.5 h-3.5 text-[#757C73] shrink-0" />
+                              <ArrowUpRight className="w-3.5 h-3.5 text-[#64748B] shrink-0" />
                             </button>
                           ))}
                         </div>
@@ -393,7 +393,7 @@ export function HelapromptWorkspace() {
 
               {/* Search Bar & Quick Suggestions */}
               <section aria-label="Search prompts" className="space-y-3">
-                <div className="relative flex items-center bg-white border border-[#E4E2D9] rounded-xl px-4 py-3 shadow-[0_1px_2px_rgba(0,0,0,0.02)] focus-within:border-[#1D442B] focus-within:ring-2 focus-within:ring-[#1D442B]/15 transition-all">
+                <div className="relative flex items-center bg-white border border-[#E2E8F0] rounded-xl px-4 py-3 shadow-[0_1px_2px_rgba(0,0,0,0.02)] focus-within:border-[#15803D] focus-within:ring-2 focus-within:ring-[#15803D]/15 transition-all">
                   <Search
                     className="w-4 h-4 text-[#8D9289] shrink-0 mr-3"
                     strokeWidth={1.8}
@@ -403,14 +403,14 @@ export function HelapromptWorkspace() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder={t.searchPlaceholder}
-                    className="w-full bg-transparent text-[14px] text-[#1A241E] placeholder:text-[#8E9389] focus:outline-none"
+                    className="w-full bg-transparent text-[14px] text-[#0F172A] placeholder:text-[#8E9389] focus:outline-none"
                   />
                   {searchQuery && (
                     <button
                       type="button"
                       onClick={() => setSearchQuery('')}
                       aria-label="Clear search"
-                      className="p-1 rounded-md text-[#8D9289] hover:text-[#1A241E] hover:bg-[#F3F2EC]"
+                      className="p-1 rounded-md text-[#8D9289] hover:text-[#0F172A] hover:bg-[#F1F5F9]"
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -430,7 +430,7 @@ export function HelapromptWorkspace() {
                         setActiveView('explore');
                         setActiveCategory('all');
                       }}
-                      className="inline-flex items-center gap-1 rounded-md bg-[#ECEAE3] hover:bg-[#E1DFD6] px-2.5 py-1 text-[12px] font-medium text-[#545B52] transition-colors whitespace-nowrap"
+                      className="inline-flex items-center gap-1 rounded-md bg-[#EFF6FF] hover:bg-[#DBEAFE] px-2.5 py-1 text-[12px] font-medium text-[#1D4ED8] transition-colors whitespace-nowrap"
                     >
                       <span>{item.label}</span>
                       <ArrowUpRight className="w-3 h-3 text-[#7D8278]" />
@@ -448,23 +448,23 @@ export function HelapromptWorkspace() {
                 {/* Kicker + Heading + Count */}
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
                   <div>
-                    <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#7C8076] mb-1.5">
+                    <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#64748B] mb-1.5">
                       {t.libraryKicker}
                     </p>
-                    <h2 className="text-[23px] sm:text-[26px] font-bold text-[#1A241E] tracking-[-0.02em] leading-tight">
+                    <h2 className="text-[23px] sm:text-[26px] font-bold text-[#0F172A] tracking-[-0.02em] leading-tight">
                       {activeView === 'saved'
                         ? t.navSaved
                         : t.libraryTitle}
                     </h2>
                   </div>
 
-                  <p className="text-[12.5px] font-medium text-[#7C8076] tabular-nums shrink-0">
+                  <p className="text-[12.5px] font-medium text-[#64748B] tabular-nums shrink-0">
                     {filteredPrompts.length} {t.promptsCountSuffix}
                   </p>
                 </div>
 
                 {/* Filter Tabs + AI Tool Dropdown */}
-                <div className="flex items-center justify-between gap-4 border-b border-[#E7E5DD]">
+                <div className="flex items-center justify-between gap-4 border-b border-[#E2E8F0]">
                   <div className="flex items-center gap-5 sm:gap-6 overflow-x-auto no-scrollbar">
                     {activeView === 'explore' ? (
                       t.tabs.map((tab) => {
@@ -478,13 +478,13 @@ export function HelapromptWorkspace() {
                             }
                             className={`inline-flex items-center gap-1.5 pb-3 text-[13.5px] whitespace-nowrap shrink-0 border-b-2 -mb-px transition-colors ${
                               isActive
-                                ? 'border-[#1D442B] text-[#1A241E] font-semibold'
-                                : 'border-transparent text-[#6A7067] hover:text-[#1A241E] font-medium'
+                                ? 'border-[#2563EB] text-[#1D4ED8] font-semibold'
+                                : 'border-transparent text-[#64748B] hover:text-[#0F172A] font-medium'
                             }`}
                           >
                             {'hasStar' in tab && tab.hasStar && (
                               <Sparkles
-                                className="w-3.5 h-3.5 text-[#1D442B]"
+                                className="w-3.5 h-3.5 text-[#15803D]"
                                 strokeWidth={2}
                               />
                             )}
@@ -493,8 +493,8 @@ export function HelapromptWorkspace() {
                         );
                       })
                     ) : (
-                      <div className="pb-3 text-[13.5px] font-semibold text-[#1A241E] border-b-2 border-[#1D442B] -mb-px inline-flex items-center gap-1.5">
-                        <Heart className="w-3.5 h-3.5 fill-[#1D442B] text-[#1D442B]" />
+                      <div className="pb-3 text-[13.5px] font-semibold text-[#0F172A] border-b-2 border-[#15803D] -mb-px inline-flex items-center gap-1.5">
+                        <Heart className="w-3.5 h-3.5 fill-[#15803D] text-[#15803D]" />
                         <span>{t.navSaved}</span>
                       </div>
                     )}
@@ -505,18 +505,18 @@ export function HelapromptWorkspace() {
                     <button
                       type="button"
                       onClick={() => setToolMenuOpen((o) => !o)}
-                      className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#3C443D] hover:text-[#1A241E] py-1 px-2 rounded-md hover:bg-[#EFECE4] transition-colors whitespace-nowrap"
+                      className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#3C443D] hover:text-[#0F172A] py-1 px-2 rounded-md hover:bg-[#F1F5F9] transition-colors whitespace-nowrap"
                     >
                       <span>
                         {selectedTool === 'All AI tools'
                           ? t.allTools
                           : selectedTool}
                       </span>
-                      <ChevronDown className="w-3.5 h-3.5 text-[#757C73]" />
+                      <ChevronDown className="w-3.5 h-3.5 text-[#64748B]" />
                     </button>
 
                     {toolMenuOpen && (
-                      <div className="absolute right-0 mt-1.5 w-40 rounded-xl bg-white border border-[#E4E2D9] shadow-lg py-1 z-20">
+                      <div className="absolute right-0 mt-1.5 w-40 rounded-xl bg-white border border-[#E2E8F0] shadow-lg py-1 z-20">
                         {AI_TOOLS.map((tool) => (
                           <button
                             key={tool}
@@ -527,8 +527,8 @@ export function HelapromptWorkspace() {
                             }}
                             className={`w-full text-left px-3.5 py-2 text-[13px] transition-colors ${
                               selectedTool === tool
-                                ? 'bg-[#E1E8D3] text-[#1B3122] font-semibold'
-                                : 'text-[#4F564F] hover:bg-[#F5F4EE]'
+                                ? 'bg-[#DCFCE7] text-[#166534] font-semibold'
+                                : 'text-[#475569] hover:bg-[#F8FAFC]'
                             }`}
                           >
                             {tool === 'All AI tools' ? t.allTools : tool}
@@ -554,36 +554,36 @@ export function HelapromptWorkspace() {
                     ))}
                   </div>
                 ) : activeView === 'saved' && savedIds.length === 0 ? (
-                  <div className="rounded-2xl border border-[#E6E4DC] bg-white py-16 px-6 text-center">
-                    <div className="w-11 h-11 rounded-full bg-[#F3F2EC] mx-auto mb-4 flex items-center justify-center text-[#5B645C]">
+                  <div className="rounded-2xl border border-[#E2E8F0] bg-white py-16 px-6 text-center">
+                    <div className="w-11 h-11 rounded-full bg-[#F1F5F9] mx-auto mb-4 flex items-center justify-center text-[#475569]">
                       <Heart className="w-5 h-5" />
                     </div>
-                    <h3 className="text-[16px] font-bold text-[#1A241E] mb-1.5">
+                    <h3 className="text-[16px] font-bold text-[#0F172A] mb-1.5">
                       {t.savedEmptyTitle}
                     </h3>
-                    <p className="text-[13.5px] text-[#6A7067] max-w-sm mx-auto mb-5">
+                    <p className="text-[13.5px] text-[#64748B] max-w-sm mx-auto mb-5">
                       {t.savedEmptyDesc}
                     </p>
                     <button
                       type="button"
                       onClick={() => setActiveView('explore')}
-                      className="rounded-lg bg-[#1D442B] hover:bg-[#275738] text-white px-4 py-2 text-[13px] font-semibold transition-colors"
+                      className="rounded-lg bg-[#15803D] hover:bg-[#166534] text-white px-4 py-2 text-[13px] font-semibold transition-colors"
                     >
                       {t.navExplore}
                     </button>
                   </div>
                 ) : (
-                  <div className="rounded-2xl border border-[#E6E4DC] bg-white py-16 px-6 text-center">
-                    <h3 className="text-[16px] font-bold text-[#1A241E] mb-1.5">
+                  <div className="rounded-2xl border border-[#E2E8F0] bg-white py-16 px-6 text-center">
+                    <h3 className="text-[16px] font-bold text-[#0F172A] mb-1.5">
                       {t.emptyTitle}
                     </h3>
-                    <p className="text-[13.5px] text-[#6A7067] max-w-sm mx-auto mb-5">
+                    <p className="text-[13.5px] text-[#64748B] max-w-sm mx-auto mb-5">
                       {t.emptyDesc}
                     </p>
                     <button
                       type="button"
                       onClick={handleResetFilters}
-                      className="rounded-lg bg-[#1D442B] hover:bg-[#275738] text-white px-4 py-2 text-[13px] font-semibold transition-colors"
+                      className="rounded-lg bg-[#15803D] hover:bg-[#166534] text-white px-4 py-2 text-[13px] font-semibold transition-colors"
                     >
                       {t.emptyReset}
                     </button>

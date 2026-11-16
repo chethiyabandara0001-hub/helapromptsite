@@ -30,6 +30,18 @@ interface SidebarProps {
   onCloseMobile: () => void;
 }
 
+const CATEGORY_STYLES: Record<
+  string,
+  { chip: string; dot: string }
+> = {
+  business: { chip: 'bg-green-100 text-green-700', dot: 'bg-green-500' },
+  education: { chip: 'bg-blue-100 text-blue-700', dot: 'bg-blue-500' },
+  content: { chip: 'bg-yellow-100 text-yellow-700', dot: 'bg-yellow-400' },
+  image: { chip: 'bg-blue-100 text-blue-700', dot: 'bg-blue-500' },
+  career: { chip: 'bg-green-100 text-green-700', dot: 'bg-green-500' },
+  daily: { chip: 'bg-yellow-100 text-yellow-700', dot: 'bg-yellow-400' },
+};
+
 export function Sidebar({
   lang,
   activeView,
@@ -81,9 +93,9 @@ export function Sidebar({
   ];
 
   const navContent = (
-    <div className="flex flex-col h-full bg-[#F3F2EC] border-r border-[#E4E2D9] w-[224px] select-none">
+    <div className="flex flex-col h-full bg-white border-r border-slate-200 w-[248px] select-none">
       {/* Brand Lockup */}
-      <div className="flex items-center justify-between px-5 pt-5 pb-4">
+      <div className="flex items-center justify-between px-5 pt-5 pb-5 border-b border-slate-100">
         <button
           type="button"
           onClick={() => {
@@ -91,28 +103,37 @@ export function Sidebar({
             onSelectCategory('all');
             onCloseMobile();
           }}
-          className="flex items-center gap-2.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E462B] rounded-md"
+          className="flex items-center gap-2.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
         >
-          <BrandMark size={19} color="#63944B" />
-          <span className="text-[19px] font-bold tracking-[-0.02em] text-[#1A2D20] whitespace-nowrap">
-            {t.brand}
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-600">
+            <BrandMark size={16} color="#ffffff" />
+          </span>
+          <span className="text-[18px] font-extrabold tracking-[-0.03em] text-slate-900 whitespace-nowrap">
+            helaprompt<span className="text-blue-600">.</span>
           </span>
         </button>
         <button
           type="button"
           onClick={onCloseMobile}
           aria-label="Close navigation"
-          className="lg:hidden p-1.5 rounded-md text-[#5B645C] hover:bg-[#E7E5DC]"
+          className="lg:hidden p-1.5 rounded-lg text-slate-500 hover:bg-slate-100"
         >
           <X className="w-4 h-4" />
         </button>
       </div>
 
+      {/* Color strip — green / blue / yellow */}
+      <div className="flex h-1 shrink-0" aria-hidden="true">
+        <span className="flex-1 bg-green-500" />
+        <span className="flex-1 bg-blue-500" />
+        <span className="flex-1 bg-yellow-400" />
+      </div>
+
       {/* Main Navigation */}
-      <div className="flex-1 overflow-y-auto px-3.5 py-2 space-y-6">
+      <div className="flex-1 overflow-y-auto px-3 py-4 space-y-6">
         {/* Section 1: Workspace */}
         <div>
-          <p className="px-2.5 mb-2 text-[11px] font-medium text-[#7C8279]">
+          <p className="px-2.5 mb-2 text-[11px] font-semibold tracking-[0.08em] uppercase text-slate-400">
             {t.sidebarWorkspaceTitle}
           </p>
           <nav className="space-y-1">
@@ -122,10 +143,10 @@ export function Sidebar({
                 onSelectView('explore');
                 onCloseMobile();
               }}
-              className={`w-full flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-[13.5px] font-medium transition-colors whitespace-nowrap ${
+              className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-[13.5px] font-semibold transition-all whitespace-nowrap ${
                 activeView === 'explore' && activeCategory === 'all'
-                  ? 'bg-[#E1E8D3] text-[#1B3122]'
-                  : 'text-[#4F564F] hover:bg-[#EAE8E0] hover:text-[#1A241E]'
+                  ? 'bg-blue-600 text-white shadow-sm shadow-blue-600/20'
+                  : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
               }`}
             >
               <LayoutGrid className="w-4 h-4 shrink-0" strokeWidth={1.75} />
@@ -138,10 +159,10 @@ export function Sidebar({
                 onSelectView('collections');
                 onCloseMobile();
               }}
-              className={`w-full flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-[13.5px] font-medium transition-colors whitespace-nowrap ${
+              className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-[13.5px] font-semibold transition-all whitespace-nowrap ${
                 activeView === 'collections'
-                  ? 'bg-[#E1E8D3] text-[#1B3122]'
-                  : 'text-[#4F564F] hover:bg-[#EAE8E0] hover:text-[#1A241E]'
+                  ? 'bg-blue-600 text-white shadow-sm shadow-blue-600/20'
+                  : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
               }`}
             >
               <Layers className="w-4 h-4 shrink-0" strokeWidth={1.75} />
@@ -154,10 +175,10 @@ export function Sidebar({
                 onSelectView('saved');
                 onCloseMobile();
               }}
-              className={`w-full flex items-center justify-between gap-2 px-2.5 py-2 rounded-lg text-[13.5px] font-medium transition-colors whitespace-nowrap ${
+              className={`w-full flex items-center justify-between gap-2 px-3 py-2.5 rounded-xl text-[13.5px] font-semibold transition-all whitespace-nowrap ${
                 activeView === 'saved'
-                  ? 'bg-[#E1E8D3] text-[#1B3122]'
-                  : 'text-[#4F564F] hover:bg-[#EAE8E0] hover:text-[#1A241E]'
+                  ? 'bg-blue-600 text-white shadow-sm shadow-blue-600/20'
+                  : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
               }`}
             >
               <span className="flex items-center gap-2.5 min-w-0">
@@ -165,7 +186,13 @@ export function Sidebar({
                 <span className="truncate">{t.navSaved}</span>
               </span>
               {savedCount > 0 && (
-                <span className="text-[11px] tabular-nums text-[#637161] font-semibold">
+                <span
+                  className={`text-[11px] tabular-nums font-bold px-1.5 py-0.5 rounded-full ${
+                    activeView === 'saved'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-yellow-400 text-slate-900'
+                  }`}
+                >
                   {savedCount}
                 </span>
               )}
@@ -175,13 +202,14 @@ export function Sidebar({
 
         {/* Section 2: Categories */}
         <div>
-          <p className="px-2.5 mb-2 text-[11px] font-medium text-[#7C8279]">
+          <p className="px-2.5 mb-2 text-[11px] font-semibold tracking-[0.08em] uppercase text-slate-400">
             {t.sidebarCategoriesTitle}
           </p>
           <nav className="space-y-0.5">
             {categoryItems.map((item) => {
               const isActive =
                 activeView === 'explore' && activeCategory === item.id;
+              const style = CATEGORY_STYLES[item.id];
               return (
                 <button
                   key={item.id}
@@ -191,14 +219,23 @@ export function Sidebar({
                     onSelectCategory(item.id);
                     onCloseMobile();
                   }}
-                  className={`w-full flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-[13.5px] font-medium transition-colors whitespace-nowrap ${
+                  className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-[13.5px] font-medium transition-all whitespace-nowrap ${
                     isActive
-                      ? 'bg-[#E1E8D3] text-[#1B3122]'
-                      : 'text-[#4F564F] hover:bg-[#EAE8E0] hover:text-[#1A241E]'
+                      ? 'bg-slate-900 text-white shadow-sm'
+                      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
                   }`}
                 >
-                  {item.icon}
-                  <span className="truncate">{item.label}</span>
+                  <span
+                    className={`flex h-7 w-7 items-center justify-center rounded-lg shrink-0 ${
+                      isActive ? 'bg-white/15 text-white' : style.chip
+                    }`}
+                  >
+                    {item.icon}
+                  </span>
+                  <span className="truncate flex-1 text-left">{item.label}</span>
+                  {!isActive && (
+                    <span className={`h-2 w-2 rounded-full shrink-0 ${style.dot}`} />
+                  )}
                 </button>
               );
             })}
@@ -207,15 +244,19 @@ export function Sidebar({
       </div>
 
       {/* Bottom Onboarding Card + Footer */}
-      <div className="px-3.5 pb-4 pt-2 space-y-3">
-        <div className="bg-[#DFEAD2] rounded-xl p-4 border border-[#D4E2C4]">
-          <div className="mb-2.5">
-            <BrandMark size={13} color="#3B5B39" />
+      <div className="px-3 pb-4 pt-2 space-y-3">
+        <div className="rounded-2xl bg-yellow-50 border border-yellow-200 p-4">
+          <div className="mb-2.5 flex items-center gap-2">
+            <span className="flex h-6 w-6 items-center justify-center rounded-md bg-yellow-400">
+              <BrandMark size={12} color="#0f172a" />
+            </span>
+            <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
           </div>
-          <h3 className="text-[13.5px] font-bold text-[#1A2D20] leading-snug mb-1">
+          <h3 className="text-[13.5px] font-bold text-slate-900 leading-snug mb-1">
             {t.newToAiTitle}
           </h3>
-          <p className="text-[12px] text-[#4C5E4A] leading-relaxed mb-3">
+          <p className="text-[12px] text-slate-600 leading-relaxed mb-3">
             {t.newToAiBody}
           </p>
           <button
@@ -224,15 +265,15 @@ export function Sidebar({
               onOpenGuide();
               onCloseMobile();
             }}
-            className="text-[12px] font-semibold text-[#1D3C27] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E462B] rounded"
+            className="text-[12px] font-bold text-blue-600 hover:text-blue-700 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
           >
             {t.newToAiCta}
           </button>
         </div>
 
-        <p className="px-2 text-[11px] text-[#8E9389] flex items-center gap-1">
+        <p className="px-2 text-[11px] text-slate-400 flex items-center gap-1.5">
           <span>{t.madeFor}</span>
-          <span aria-hidden="true" className="text-[#4F6B4B]">
+          <span aria-hidden="true" className="text-green-600 font-bold">
             ♡
           </span>
         </p>
@@ -251,10 +292,10 @@ export function Sidebar({
       {mobileOpen && (
         <div className="fixed inset-0 z-50 lg:hidden flex">
           <div
-            className="fixed inset-0 bg-black/25 backdrop-blur-[1px]"
+            className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm"
             onClick={onCloseMobile}
           />
-          <div className="relative z-10 h-full">{navContent}</div>
+          <div className="relative z-10 h-full shadow-2xl">{navContent}</div>
         </div>
       )}
     </>

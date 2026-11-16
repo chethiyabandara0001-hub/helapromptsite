@@ -72,20 +72,20 @@ function PromptModalBody({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-2xl rounded-2xl bg-[#FAF9F6] border border-[#E4E2D9] shadow-2xl overflow-hidden"
+        className="w-full max-w-2xl rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
         <div className="flex items-start justify-between gap-4 px-6 py-5 bg-white border-b border-[#EAE8DF]">
           <div>
-            <div className="flex items-center gap-2 text-[12px] font-medium text-[#757C73] mb-1.5">
+            <div className="flex items-center gap-2 text-[12px] font-medium text-[#64748B] mb-1.5">
               <span>{getCategoryLabel(prompt.category, lang)}</span>
               <span aria-hidden="true">·</span>
               <span>{prompt.tool}</span>
             </div>
             <h2
               id="prompt-modal-title"
-              className="text-[19px] font-bold text-[#1A241E] leading-snug"
+              className="text-[19px] font-bold text-[#0F172A] leading-snug"
             >
               {title}
             </h2>
@@ -96,11 +96,11 @@ function PromptModalBody({
               type="button"
               onClick={() => onToggleSave(prompt.id)}
               aria-label={isSaved ? 'Remove saved prompt' : 'Save prompt'}
-              className="w-9 h-9 rounded-lg border border-[#E4E2D9] bg-[#FAF9F6] hover:bg-[#EFECE4] flex items-center justify-center text-[#4F564F] transition-colors"
+              className="w-9 h-9 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] hover:bg-[#F1F5F9] flex items-center justify-center text-[#475569] transition-colors"
             >
               <Heart
                 className={`w-4 h-4 ${
-                  isSaved ? 'fill-[#1D442B] text-[#1D442B]' : ''
+                  isSaved ? 'fill-[#15803D] text-[#15803D]' : ''
                 }`}
               />
             </button>
@@ -108,7 +108,7 @@ function PromptModalBody({
               type="button"
               onClick={onClose}
               aria-label="Close modal"
-              className="w-9 h-9 rounded-lg border border-[#E4E2D9] bg-[#FAF9F6] hover:bg-[#EFECE4] flex items-center justify-center text-[#4F564F] transition-colors"
+              className="w-9 h-9 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] hover:bg-[#F1F5F9] flex items-center justify-center text-[#475569] transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -117,7 +117,7 @@ function PromptModalBody({
 
         {/* Body */}
         <div className="p-6 space-y-4">
-          <p className="text-[13.5px] text-[#5B645C] leading-relaxed">
+          <p className="text-[13.5px] text-[#475569] leading-relaxed">
             {description}
           </p>
 
@@ -129,14 +129,14 @@ function PromptModalBody({
                 : 'Edit bracketed placeholders ([...]) before copying:'}
             </span>
 
-            <div className="inline-flex items-center rounded-lg border border-[#E2E0D7] bg-white p-0.5 text-[12px] font-medium shrink-0">
+            <div className="inline-flex items-center rounded-lg border border-[#E2E8F0] bg-white p-0.5 text-[12px] font-medium shrink-0">
               <button
                 type="button"
                 onClick={() => handleSwitchPromptLang('si')}
                 className={`px-2.5 py-1 rounded-md transition-colors ${
                   promptLang === 'si'
-                    ? 'bg-[#E1E8D3] text-[#1B3122] font-semibold'
-                    : 'text-[#6E756B] hover:text-[#1A241E]'
+                    ? 'bg-[#DCFCE7] text-[#166534] font-semibold'
+                    : 'text-[#6E756B] hover:text-[#0F172A]'
                 }`}
               >
                 සිංහල
@@ -146,8 +146,8 @@ function PromptModalBody({
                 onClick={() => handleSwitchPromptLang('en')}
                 className={`px-2.5 py-1 rounded-md transition-colors ${
                   promptLang === 'en'
-                    ? 'bg-[#E1E8D3] text-[#1B3122] font-semibold'
-                    : 'text-[#6E756B] hover:text-[#1A241E]'
+                    ? 'bg-[#DCFCE7] text-[#166534] font-semibold'
+                    : 'text-[#6E756B] hover:text-[#0F172A]'
                 }`}
               >
                 English
@@ -159,7 +159,7 @@ function PromptModalBody({
             value={editedText}
             onChange={(e) => setEditedText(e.target.value)}
             rows={9}
-            className="w-full rounded-xl border border-[#DFDDD4] bg-white p-4 text-[13.5px] leading-[1.65] text-[#1A241E] focus:outline-none focus:ring-2 focus:ring-[#1D442B]/30 focus:border-[#1D442B] resize-y"
+            className="w-full rounded-xl border border-[#CBD5E1] bg-white p-4 text-[13.5px] leading-[1.65] text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#15803D]/30 focus:border-[#15803D] resize-y"
           />
 
           <div className="flex items-center justify-between pt-2">
@@ -170,7 +170,7 @@ function PromptModalBody({
                   promptLang === 'si' ? prompt.promptSi : prompt.promptEn
                 )
               }
-              className="text-[12.5px] font-medium text-[#6C7369] hover:text-[#1A241E] transition-colors"
+              className="text-[12.5px] font-medium text-[#6C7369] hover:text-[#0F172A] transition-colors"
             >
               {lang === 'si' ? 'මුල් පිටපතට යන්න' : 'Reset text'}
             </button>
@@ -178,7 +178,7 @@ function PromptModalBody({
             <button
               type="button"
               onClick={handleCopy}
-              className="inline-flex items-center gap-2 rounded-lg bg-[#1D442B] hover:bg-[#275738] text-white px-5 py-2.5 text-[13px] font-semibold transition-colors"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#15803D] hover:bg-[#166534] text-white px-5 py-2.5 text-[13px] font-semibold transition-colors"
             >
               {copied ? (
                 <>

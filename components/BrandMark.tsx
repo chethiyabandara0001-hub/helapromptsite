@@ -10,7 +10,7 @@ interface BrandMarkProps {
 
 export function BrandMark({
   size = 20,
-  color = '#63944B',
+  color = '#16a34a',
   className = '',
 }: BrandMarkProps) {
   const barWidth = Math.max(2.5, size * 0.22);

@@ -95,13 +95,13 @@ export function AddPromptModal({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-lg rounded-2xl bg-[#FAF9F6] border border-[#E4E2D9] shadow-2xl overflow-hidden"
+        className="w-full max-w-lg rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between px-6 py-4 bg-white border-b border-[#EAE8DF]">
           <h2
             id="add-prompt-title"
-            className="text-[17px] font-bold text-[#1A241E]"
+            className="text-[17px] font-bold text-[#0F172A]"
           >
             {lang === 'si' ? 'නව Prompt එකක් එකතු කරන්න' : 'Add a New Prompt'}
           </h2>
@@ -109,7 +109,7 @@ export function AddPromptModal({
             type="button"
             onClick={onClose}
             aria-label="Close modal"
-            className="w-8 h-8 rounded-lg border border-[#E4E2D9] bg-[#FAF9F6] hover:bg-[#EFECE4] flex items-center justify-center text-[#4F564F]"
+            className="w-8 h-8 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] hover:bg-[#F1F5F9] flex items-center justify-center text-[#475569]"
           >
             <X className="w-4 h-4" />
           </button>
@@ -135,7 +135,7 @@ export function AddPromptModal({
                   ? 'උදා: Instagram Caption එකක් ලිවීම'
                   : 'e.g. Engaging Instagram Caption Writer'
               }
-              className="w-full rounded-xl border border-[#DFDDD4] bg-white px-3.5 py-2.5 text-[13.5px] text-[#1A241E] placeholder:text-[#989E94] focus:outline-none focus:ring-2 focus:ring-[#1D442B]/30 focus:border-[#1D442B]"
+              className="w-full rounded-xl border border-[#CBD5E1] bg-white px-3.5 py-2.5 text-[13.5px] text-[#0F172A] placeholder:text-[#989E94] focus:outline-none focus:ring-2 focus:ring-[#15803D]/30 focus:border-[#15803D]"
             />
           </div>
 
@@ -149,7 +149,7 @@ export function AddPromptModal({
                 onChange={(e) =>
                   setCategory(e.target.value as Exclude<PromptCategory, 'all'>)
                 }
-                className="w-full rounded-xl border border-[#DFDDD4] bg-white px-3 py-2.5 text-[13.5px] text-[#1A241E] focus:outline-none focus:ring-2 focus:ring-[#1D442B]/30 focus:border-[#1D442B]"
+                className="w-full rounded-xl border border-[#CBD5E1] bg-white px-3 py-2.5 text-[13.5px] text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#15803D]/30 focus:border-[#15803D]"
               >
                 <option value="business">
                   {lang === 'si' ? 'ව්‍යාපාර' : 'Business'}
@@ -183,7 +183,7 @@ export function AddPromptModal({
                     e.target.value as Exclude<AiTool, 'All AI tools'>
                   )
                 }
-                className="w-full rounded-xl border border-[#DFDDD4] bg-white px-3 py-2.5 text-[13.5px] text-[#1A241E] focus:outline-none focus:ring-2 focus:ring-[#1D442B]/30 focus:border-[#1D442B]"
+                className="w-full rounded-xl border border-[#CBD5E1] bg-white px-3 py-2.5 text-[13.5px] text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#15803D]/30 focus:border-[#15803D]"
               >
                 <option value="ChatGPT">ChatGPT</option>
                 <option value="Gemini">Gemini</option>
@@ -206,7 +206,7 @@ export function AddPromptModal({
                   ? 'මෙම prompt එකෙන් කරන දේ කෙටියෙන්...'
                   : 'Briefly describe what this prompt helps with...'
               }
-              className="w-full rounded-xl border border-[#DFDDD4] bg-white px-3.5 py-2.5 text-[13.5px] text-[#1A241E] placeholder:text-[#989E94] focus:outline-none focus:ring-2 focus:ring-[#1D442B]/30 focus:border-[#1D442B]"
+              className="w-full rounded-xl border border-[#CBD5E1] bg-white px-3.5 py-2.5 text-[13.5px] text-[#0F172A] placeholder:text-[#989E94] focus:outline-none focus:ring-2 focus:ring-[#15803D]/30 focus:border-[#15803D]"
             />
           </div>
 
@@ -223,7 +223,7 @@ export function AddPromptModal({
                   ? 'ඔබේ prompt එක මෙහි ලියන්න. වෙනස් කළ යුතු තැන් [වරහන්] තුළ දක්වන්න.'
                   : 'Write your prompt here. Use [brackets] for customizable fields.'
               }
-              className="w-full rounded-xl border border-[#DFDDD4] bg-white p-3.5 text-[13.5px] leading-relaxed text-[#1A241E] placeholder:text-[#989E94] focus:outline-none focus:ring-2 focus:ring-[#1D442B]/30 focus:border-[#1D442B]"
+              className="w-full rounded-xl border border-[#CBD5E1] bg-white p-3.5 text-[13.5px] leading-relaxed text-[#0F172A] placeholder:text-[#989E94] focus:outline-none focus:ring-2 focus:ring-[#15803D]/30 focus:border-[#15803D]"
             />
           </div>
 
@@ -231,13 +231,13 @@ export function AddPromptModal({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-lg text-[13px] font-medium text-[#5B645C] hover:bg-[#EAE8E0] transition-colors"
+              className="px-4 py-2 rounded-lg text-[13px] font-medium text-[#475569] hover:bg-[#F1F5F9] transition-colors"
             >
               {lang === 'si' ? 'අවලංගු කරන්න' : 'Cancel'}
             </button>
             <button
               type="submit"
-              className="inline-flex items-center gap-1.5 rounded-lg bg-[#1D442B] hover:bg-[#275738] text-white px-4 py-2 text-[13px] font-semibold transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-[#15803D] hover:bg-[#166534] text-white px-4 py-2 text-[13px] font-semibold transition-colors"
             >
               <Plus className="w-4 h-4" />
               <span>{lang === 'si' ? 'එකතු කරන්න' : 'Save Prompt'}</span>

@@ -1,37 +1,68 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme {
+  --font-sans: 'Plus Jakarta Sans Variable', 'Noto Sans Sinhala Variable', system-ui, -apple-system, sans-serif;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #faf9f6;
-    color: #1a241e;
+    background-color: #f8fafc;
+    color: #0f172a;
   }
 
   body {
-    background-color: #faf9f6;
-    color: #1a241e;
-    font-family: var(--font-jakarta), var(--font-sinhala), system-ui, sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-family: 'Plus Jakarta Sans Variable', 'Noto Sans Sinhala Variable', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: #facc15;
+    color: #0f172a;
   }
 }
 
-/* Subtle custom scrollbar for sidebar and modals */
+/* Clean scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #d8d5cc;
+  background: #cbd5e1;
   border-radius: 9999px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #bdb9ae;
+  background: #94a3b8;
+}
+
+/* Hide scrollbar for tab rows */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle entrance for cards */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-rise {
+  animation: rise 0.35s ease both;
 }

@@ -69,12 +69,12 @@ export function GuideModal({ open, lang, onClose }: GuideModalProps) {
       onClick={onClose}
     >
       <div
-        className="w-full max-w-md rounded-2xl bg-[#FAF9F6] border border-[#E4E2D9] shadow-2xl overflow-hidden"
+        className="w-full max-w-md rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between px-6 py-4 bg-[#DFEAD2] border-b border-[#D2DFC3]">
           <div className="flex items-center gap-2.5">
-            <BrandMark size={16} color="#1D442B" />
+            <BrandMark size={16} color="#15803D" />
             <h2
               id="guide-modal-title"
               className="text-[16px] font-bold text-[#1A2D20]"
@@ -99,10 +99,10 @@ export function GuideModal({ open, lang, onClose }: GuideModalProps) {
                 {step.num}
               </span>
               <div>
-                <h3 className="text-[14.5px] font-bold text-[#1A241E] mb-1">
+                <h3 className="text-[14.5px] font-bold text-[#0F172A] mb-1">
                   {step.title}
                 </h3>
-                <p className="text-[13px] text-[#5B645C] leading-relaxed">
+                <p className="text-[13px] text-[#475569] leading-relaxed">
                   {step.desc}
                 </p>
               </div>
@@ -113,7 +113,7 @@ export function GuideModal({ open, lang, onClose }: GuideModalProps) {
             <button
               type="button"
               onClick={onClose}
-              className="w-full rounded-lg bg-[#1D442B] hover:bg-[#275738] text-white py-2.5 text-[13px] font-semibold transition-colors"
+              className="w-full rounded-lg bg-[#15803D] hover:bg-[#166534] text-white py-2.5 text-[13px] font-semibold transition-colors"
             >
               {lang === 'si' ? 'තේරුණා, පටන් ගමු' : 'Got it, let’s start'}
             </button>
